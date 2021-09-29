@@ -12,6 +12,8 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('auth/facebook', [App\Http\Controllers\FacebookController::class, 'redirectToFacebook']);
+Route::get('auth/facebook/callback', [App\Http\Controllers\FacebookController::class, 'handleFacebookCallback']);
 
 Route::get('/', function () {
     return view('welcome');
